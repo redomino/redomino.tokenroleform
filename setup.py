@@ -26,6 +26,8 @@ setup(name='redomino.tokenroleform',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'Products.PloneFormGen',
+          'redomino.tokenrole',
       ],
       entry_points="""
       # -*- Entry points: -*-
@@ -33,6 +35,6 @@ setup(name='redomino.tokenroleform',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
+#      setup_requires=["PasteScript"],
+#      paster_plugins=["ZopeSkel"],
       )
