@@ -1,18 +1,49 @@
-from setuptools import setup, find_packages
+# -*- coding: utf-8 -*-
+"""
+This module contains the tool of redomino.tokenroleform
+"""
 import os
+from setuptools import setup, find_packages
+
+
+def read(*rnames):
+    return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 version = '0.1'
+
+long_description = (
+    read('README.txt')
+    + '\n' +
+    'Change history\n'
+    '**************\n'
+    + '\n' +
+    read('CHANGES.txt')
+    + '\n' +
+    'Detailed Documentation\n'
+    '**********************\n'
+    + '\n' +
+    read('redomino', 'tokenroleform', 'README.txt')
+    + '\n' +
+    'Contributors\n'
+    '************\n'
+    + '\n' +
+    read('CONTRIBUTORS.txt')
+    + '\n' +
+    'Download\n'
+    '********\n')
+
+tests_require = ['zope.testing']
 
 setup(name='redomino.tokenroleform',
       version=version,
       description="Token Role Form",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
-        "Framework :: Plone",
-        "Programming Language :: Python",
+        'Framework :: Plone',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: GNU General Public License (GPL)',
         ],
       keywords='',
       author='',
@@ -20,18 +51,19 @@ setup(name='redomino.tokenroleform',
       url='http://svn.plone.org/svn/collective/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['redomino'],
+      namespace_packages=['redomino', ],
       include_package_data=True,
       zip_safe=False,
-      install_requires=[
-          'setuptools',
-          # -*- Extra requirements: -*-
-          'Products.PloneFormGen',
-          'redomino.tokenrole',
-      ],
+      install_requires=['setuptools',
+                        # -*- Extra requirements: -*-
+                        'Products.PloneFormGen',
+                        'redomino.tokenrole',
+                        ],
+      tests_require=tests_require,
+      extras_require=dict(tests=tests_require),
+      test_suite='redomino.tokenroleform.tests.test_docs.test_suite',
       entry_points="""
-      # -*- Entry points: -*-
-
+      # -*- entry_points -*-
       [z3c.autoinclude.plugin]
       target = plone
       """,
