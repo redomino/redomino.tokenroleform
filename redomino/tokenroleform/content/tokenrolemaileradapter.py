@@ -4,15 +4,17 @@
 from zope.interface import implements
 
 from Products.Archetypes import atapi
-from Products.ATContentTypes.content import base
 from Products.ATContentTypes.content import schemata
+
+from Products.PloneFormGen.content.formMailerAdapter import FormMailerAdapter
+from Products.PloneFormGen.content.formMailerAdapter import formMailerAdapterSchema
 
 # -*- Message Factory Imported Here -*-
 
 from redomino.tokenroleform.interfaces import ITokenRoleMailerAdapter
 from redomino.tokenroleform.config import PROJECTNAME
 
-TokenRoleMailerAdapterSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
+TokenRoleMailerAdapterSchema = formMailerAdapterSchema.copy() + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
 
@@ -27,7 +29,7 @@ TokenRoleMailerAdapterSchema['description'].storage = atapi.AnnotationStorage()
 schemata.finalizeATCTSchema(TokenRoleMailerAdapterSchema, moveDiscussion=False)
 
 
-class TokenRoleMailerAdapter(base.ATCTContent):
+class TokenRoleMailerAdapter(FormMailerAdapter):
     """Token role mailer adapter"""
     implements(ITokenRoleMailerAdapter)
 
