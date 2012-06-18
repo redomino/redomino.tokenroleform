@@ -12,7 +12,7 @@ The tokenroleform custom adapter will provide theese options:
 
 * email template
 
-* hours, the token validity
+* minutes, the token validity (default 3600)
 
 * a reference to the private content
 

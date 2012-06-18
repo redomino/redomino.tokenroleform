@@ -10,6 +10,7 @@ from Products.PloneFormGen.content.formMailerAdapter import FormMailerAdapter
 from Products.PloneFormGen.content.formMailerAdapter import formMailerAdapterSchema
 
 # -*- Message Factory Imported Here -*-
+from redomino.tokenroleform import tokenroleformMessageFactory as _
 
 from redomino.tokenroleform.interfaces import ITokenRoleMailerAdapter
 from redomino.tokenroleform.config import PROJECTNAME
@@ -17,6 +18,33 @@ from redomino.tokenroleform.config import PROJECTNAME
 TokenRoleMailerAdapterSchema = formMailerAdapterSchema.copy() + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
+
+    atapi.ReferenceField(
+        'private_doc',
+        storage=atapi.AnnotationStorage(),
+        widget=atapi.ReferenceWidget(
+            label=_(u"Private doc"),
+            description=_(u"Choose the private item you are going to share"),
+        ),
+        required=True,
+        relationship='tokenrolemaileradapter_private_doc',
+        allowed_types=(), # specify portal type names here ('Example Type',)
+        multiValued=False,
+    ),
+
+
+    atapi.IntegerField(
+        'minutes',
+        storage=atapi.AnnotationStorage(),
+        widget=atapi.IntegerWidget(
+            label=_(u"Validity (minutes)"),
+            description=_(u"Type the token validity in minutes"),
+        ),
+        required=True,
+        default=_(u"3600"),
+        validators=('isInt'),
+    ),
+
 
 ))
 
@@ -40,5 +68,9 @@ class TokenRoleMailerAdapter(FormMailerAdapter):
     description = atapi.ATFieldProperty('description')
 
     # -*- Your ATSchema to Python Property Bridges Here ... -*-
+    private_doc = atapi.ATReferenceFieldProperty('private_doc')
+
+    minutes = atapi.ATFieldProperty('minutes')
+
 
 atapi.registerType(TokenRoleMailerAdapter, PROJECTNAME)
