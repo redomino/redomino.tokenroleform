@@ -8,6 +8,14 @@ This action adapter activates a temporary access token thanks to redomino.tokenr
 
 Unregistered people will be able to download or see private contents with a temporary link.
 
+The tokenroleform custom adapter will provide theese options:
+
+* email template
+
+* hours, the token validity
+
+* a reference to the private content
+
 Authors
 -------
 
