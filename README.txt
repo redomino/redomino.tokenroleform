@@ -8,16 +8,27 @@ This action adapter activates a temporary access token thanks to redomino.tokenr
 
 Unregistered people will be able to download or see private contents with a temporary link.
 
-The tokenroleform custom adapter will provide theese options:
+How to use tokenroleform
+------------------------
 
-* email template
+Step by step:
 
-* minutes, the token validity (default 3600)
+* install redomino.tokenroleform
 
-* a reference to the private content
+* create a PloneFormGen
+
+* add a 'TokenRoleMailerAdapter'
+
+    * choose an existing private document you want to share (field "Private doc")
+
+    * validity (minutes), the token validity. Default: 60 minutes
+
+    * Extract Recipient (choose "From Your E-Mail Address")
+
+    * fill the fields of the Message tab
 
 Authors
--------
+=======
 
 * Davide Moro <davide.moro@redomino.com> - Idea and main implementation
 
