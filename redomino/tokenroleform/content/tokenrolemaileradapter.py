@@ -3,6 +3,8 @@
 
 from zope.interface import implements
 
+from archetypes.referencebrowserwidget.widget import ReferenceBrowserWidget
+
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import schemata
 
@@ -22,7 +24,7 @@ TokenRoleMailerAdapterSchema = formMailerAdapterSchema.copy() + atapi.Schema((
     atapi.ReferenceField(
         'private_doc',
         storage=atapi.AnnotationStorage(),
-        widget=atapi.ReferenceWidget(
+        widget=ReferenceBrowserWidget(
             label=_(u"Private doc"),
             description=_(u"Choose the private item you are going to share"),
         ),
@@ -53,8 +55,12 @@ TokenRoleMailerAdapterSchema = formMailerAdapterSchema.copy() + atapi.Schema((
 
 TokenRoleMailerAdapterSchema['title'].storage = atapi.AnnotationStorage()
 TokenRoleMailerAdapterSchema['description'].storage = atapi.AnnotationStorage()
+TokenRoleMailerAdapterSchema['recipient_name'].widget.visible = {'edit':'invisible','view':'invisible'}
+TokenRoleMailerAdapterSchema['recipient_email'].widget.visible = {'edit':'invisible','view':'invisible'}
 
 schemata.finalizeATCTSchema(TokenRoleMailerAdapterSchema, moveDiscussion=False)
+
+TokenRoleMailerAdapterSchema.changeSchemataForField('to_field', 'default')
 
 
 class TokenRoleMailerAdapter(FormMailerAdapter):
