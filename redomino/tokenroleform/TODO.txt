@@ -1,3 +1,2 @@
 let users choose only token role aware items (no folders). Validator + widget
 modify reference browser widget startup folder
-no workflow for action adapter
