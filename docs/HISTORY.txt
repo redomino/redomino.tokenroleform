@@ -1,8 +1,2 @@
-Changelog
-=========
+See ../CHANGES.txt
 
-0.1dev (unreleased)
--------------------
-
-- Initial release
-  [davidemoro]
