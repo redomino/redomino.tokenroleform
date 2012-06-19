@@ -34,6 +34,7 @@ TokenRoleMailerAdapterSchema = formMailerAdapterSchema.copy() + atapi.Schema((
         widget=ReferenceBrowserWidget(
             label=_(u"Private doc"),
             description=_(u"Choose the private item you are going to share"),
+            startup_directory_method='startupDirectoryMethod',
         ),
         required=True,
         relationship='tokenrolemaileradapter_private_doc',
@@ -122,6 +123,10 @@ class TokenRoleMailerAdapter(FormMailerAdapter):
             ITokenInfoSchema(private_doc).token_end = token_end
             ITokenInfoSchema(private_doc).token_roles = token_roles
             return "%s?token=%s" % (private_doc.absolute_url(), token_id)
+
+
+    def startupDirectoryMethod(self):
+        return "/".join(self.getPhysicalPath()[:-2])
 
 
 
