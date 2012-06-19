@@ -120,7 +120,7 @@ class TokenRoleMailerAdapter(FormMailerAdapter):
             ITokenInfoSchema(private_doc).token_id = token_id
             ITokenInfoSchema(private_doc).token_end = token_end
             ITokenInfoSchema(private_doc).token_roles = token_roles
-            return "%s?token_id=%s" % (private_doc.absolute_url(), token_id)
+            return "%s?token=%s" % (private_doc.absolute_url(), token_id)
 
 
 
