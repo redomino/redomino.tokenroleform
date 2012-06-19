@@ -50,7 +50,7 @@ TokenRoleMailerAdapterSchema = formMailerAdapterSchema.copy() + atapi.Schema((
             description=_(u"Type the token validity in minutes"),
         ),
         required=True,
-        default=_(u"3600"),
+        default=60,
         validators=('isInt'),
     ),
 
