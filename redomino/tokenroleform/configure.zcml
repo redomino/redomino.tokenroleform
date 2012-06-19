@@ -15,7 +15,7 @@
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
-      title="Redomino Token Role Form"
+      title="redomino.tokenroleform"
       directory="profiles/default"
       description="Token Role Form"
       provides="Products.GenericSetup.interfaces.EXTENSION"
