@@ -78,6 +78,7 @@ class TokenRoleMailerAdapter(FormMailerAdapter):
     implements(ITokenRoleMailerAdapter)
 
     meta_type = "TokenRoleMailerAdapter"
+    content_icon = 'mailaction.gif'
     schema = TokenRoleMailerAdapterSchema
 
     title = atapi.ATFieldProperty('title')
