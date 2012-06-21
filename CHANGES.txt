@@ -7,6 +7,9 @@ Changelog
 - Updated README.txt
   [davidemoro, dpollino]
 
+- First public release
+  [davidemoro]
+
 
 0.1 (2012-06-19)
 ----------------
