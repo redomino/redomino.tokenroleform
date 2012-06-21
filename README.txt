@@ -32,10 +32,10 @@ Step by step:
 In the message tab you can configure fields putting a ${TOKEN_URL} in order to add a textual link.
 If you prefer an html link go to the Template tab and add this html:
 
-::
-<a tal:define="token_url python:request.get('TOKEN_URL');" 
-   tal:attributes="href token_url;"
-   tal:content="token_url">ACCESS LINK</a>
+
+    <a tal:define="token_url python:request.get('TOKEN_URL');" 
+       tal:attributes="href token_url;"
+       tal:content="token_url">ACCESS LINK</a>
 
 Authors
 =======
