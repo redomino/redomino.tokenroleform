@@ -1,12 +1,15 @@
 redomino.tokenroleform
 ======================
 
-This product adds a PloneFormGen action adapter that let you share contents sending via email 
-a private content.
+This product allows unregistered users to download or view a private content by simply filling 
+a contact form with personal data and a valid e-mail address; after submitting the form, an automated mail 
+containing the link to the requested private content is sent to the user who made the request.
 
-This action adapter activates a temporary access token thanks to redomino.tokenrole and sends it via mail.
+Basically the request is carried out by PloneFormGen action adapter, which activates a temporary access token
+thanks to redomino.tokenrole, and sends it via mail. The token's validity only lasts for a few minutes, 
+which means it has to be used quickly. This was done in order to avoid unauthorized sharing on social networks 
+or other platforms.
 
-Unregistered people will be able to download or see private contents with a temporary link.
 
 How to use tokenroleform
 ------------------------
