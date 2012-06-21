@@ -4,7 +4,8 @@ Changelog
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Updated README.txt
+  [davidemoro, dpollino]
 
 
 0.1 (2012-06-19)
