@@ -37,6 +37,15 @@ If you prefer an html link go to the Template tab and add this html:
        tal:attributes="href token_url;"
        tal:content="token_url">ACCESS LINK</a>
 
+
+Tokenrole form screenshot:
+
+.. figure:: https://github.com/redomino/redomino.tokenroleform/blob/master/docs/resources/tokenroleformconf.png 
+   :align: center
+
+   Token role form configuration
+
+
 Authors
 =======
 
