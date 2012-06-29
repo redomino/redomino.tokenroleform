@@ -14,9 +14,6 @@ version = '0.5.dev0'
 long_description = (
     read('README.txt')
     + '\n' +
-    'Change history\n'
-    '**************\n'
-    + '\n' +
     read('CHANGES.txt'))
 
 tests_require = ['zope.testing']

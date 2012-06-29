@@ -40,7 +40,7 @@ If you prefer an html link go to the Template tab and add this html:
 
 Tokenrole form screenshot:
 
-.. figure:: https://github.com/redomino/redomino.tokenroleform/blob/master/docs/resources/tokenroleformconf.png 
+.. figure:: https://github.com/redomino/redomino.tokenroleform/blob/master/docs/resources/tokenroleformconf.png?raw=true 
    :align: center
 
    Token role form configuration

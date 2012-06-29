@@ -4,13 +4,17 @@ Changelog
 0.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Modified setup.py.
+  [davidemoro]
 
+- Updated README.txt
+  [davidemoro]
 
 0.4 (2012-06-29)
 ----------------
 
 - Added screenshot and updated README.txt.
+  [davidemoro]
 
 
 0.3 (2012-06-28)
