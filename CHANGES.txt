@@ -4,7 +4,7 @@ Changelog
 0.4 (unreleased)
 ----------------
 
-- Updated README.txt.
+- Added screenshot and updated README.txt.
 
 
 0.3 (2012-06-28)
