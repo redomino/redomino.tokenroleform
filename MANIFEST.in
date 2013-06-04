@@ -1,2 +1,3 @@
+include *.txt
+recursive-include docs *
 recursive-include redomino *
-global-exclude *pyc
