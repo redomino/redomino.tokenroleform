@@ -4,6 +4,8 @@ Changelog
 0.5 (unreleased)
 ----------------
 
+- fixed MANIFEST.in [sithmel]
+
 - Modified setup.py.
   [davidemoro]
 
